@@ -1,0 +1,56 @@
+
+.button {
+    height: 150px;
+    width: 150px;
+    background-color: aquamarine;
+    border-radius: 15px;
+    color: black;
+    font-size: 28px;
+    text-transform: capitalize;
+    outline: none;
+    font-weight: 700;
+    border: none;
+}
+
+.button-container{
+    border-radius: 8px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.div-button{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+#red {
+    background-color: red;
+    color: white;
+}
+
+#green {
+    background-color: green;
+    color: white;
+}
+
+#blue {
+    background-color: blue;
+    color: white;
+}
+
+#yellow {
+    background-color: yellow;
+    color: red;
+}
+
+
+h1, h3 {
+    text-align:  center;
+}

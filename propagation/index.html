@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stop propagation</title>
+    <style>
+        section{
+            background-color: blueviolet;
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section id="section-container">
+        <h1>bubling propagtion</h1>
+        <ul id="ul-container">
+            <li id="item">item-1</li>
+            <li id="item-2">item-2</li>
+            <li id="item">item-3</li>
+            <li id="item">item-4</li>
+            <li id="item">item-5</li>
+        </ul>
+    </section>
+
+
+    <script>
+        const item = document.getElementById("item-2");
+        item.addEventListener("click", function(e){
+            console.log("item -2 clicked")
+        }, false)
+
+        document.querySelector("ul").addEventListener("click", function(){
+            console.log("ul container was clicked")
+        }, true)
+
+    </script>
+</body>
+</html>

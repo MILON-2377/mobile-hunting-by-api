@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <!-- //tailwind and daisy ui link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <h1>Please Provie Your Height and Weight</h1>
+    <section class="w-3/4 grid grid-rows-3 rounded-lg gap-5 p-10 bg-purple-200">
+        <form class="grid grid-rows-2 gap-8" id="form">
+            <label class="text-2xl font-semibold w-full flex gap-8">
+                <p>Height</p>
+                <input type="number" placeholder="Height" class="input input-bordered w-full focus:outline-none " id="height" />
+            </label>
+            <label class="text-2xl font-semibold w-full flex gap-8">
+                <p>Weight</p>
+                <input type="number" placeholder="Weight" class="input input-bordered w-full focus:outline-none" id="weight" />
+            </label>
+           
+        </form>
+        <button class="input w-full focus:outline-none text-2xl font-semibold bg-slate-50 mt-6" id="calculate-btn">Caculate</button>
+        <div class="bg-gray-50 rounded-lg -mt-8 p-11" id="display">
+            
+        </div>
+    </section>
+
+    <script>
+        const calculateButton = document.getElementById("calculate-btn");
+        calculateButton.addEventListener("click", function(){
+            const height = document.getElementById("height");
+            const weight = document.getElementById("weight");
+            const display = document.getElementById("display");
+            const heightVal = height.value * 0.01;
+            const weightVal = weight.value;
+            const bMi = (weightVal / (heightVal * heightVal));
+            const bmiString = `${bMi}`;
+            let finalBMI = "";
+            let sum;
+            for(let i = 0; i < bmiString.length; i++){
+                 finalBMI += bmiString[i];
+                 if(bmiString[i] === "."){
+                    sum = i;
+                 }
+                 if(i === sum + 1){
+                    break;
+                 }
+            }
+            display.innerText = finalBMI;
+            const result = parseFloat(finalBMI);
+            const p = document.createElement("p");
+            if(result < 16 ){
+                p.innerText = "Underweight";
+            }else if(result >= 16 && result <= 17){
+                p.innerText = "Moderate Thinness";
+            }else if(result > 17 && result < 18.5){
+                p.innerText = "Mild Thinness";
+            }else if(result >= 18.5 && result < 25 ){
+                p.innerText = "Normal";
+            }else{
+                p.innerText = "Overweight";
+            }
+            display.appendChild(p);
+        }, false)
+    </script>
+    <script src="script/bmi.js"></script>
+</body>
+</html>
