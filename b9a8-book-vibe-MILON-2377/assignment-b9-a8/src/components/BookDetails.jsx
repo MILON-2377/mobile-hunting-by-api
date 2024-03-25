@@ -1,8 +1,27 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { bookDetailsContext } from "../Root/Root";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { listedBooksId } from "../Utilities/listedBooks";
 
 const BookDetails = () => {
   const { bookDetails } = useContext(bookDetailsContext);
+  const [read, setRead] = useState(false);
+
+  const notifyMe = () => {
+    toast('Added to the Read List');
+    listedBooksId(bookId);
+    }   
+
+    if(read){
+        notifyMe();
+    }
+   
+
+  const wishListToast = () => {
+    toast('Added to the wishtlist');
+    listedBooksId(bookId);
+  }
 
   const {
     bookName,
@@ -15,6 +34,7 @@ const BookDetails = () => {
     yearOfPublishing,
     image,
     rating,
+    bookId
   } = bookDetails;
 
   return (
@@ -22,8 +42,7 @@ const BookDetails = () => {
       <div className="card w-[45%] bg-base-100 shadow-xl image-full">
         <figure>
           <img
-            src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
+            src={image}
           />
         </figure>
         <div className="card-body">
@@ -62,10 +81,12 @@ const BookDetails = () => {
         </div>
 
         <div className="flex gap-5">
-            <button className="btn border">Read</button>
-            <button className="btn bg-blue-800 text-white">Wishslist</button>
+            <button onClick={() => setRead(true)} className="btn border">Read</button>
+            <button onClick={wishListToast} className="btn bg-blue-800 text-white">Wishslist</button>
         </div>
       </div>
+
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
