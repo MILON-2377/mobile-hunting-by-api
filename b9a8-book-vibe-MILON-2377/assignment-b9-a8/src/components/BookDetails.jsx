@@ -1,27 +1,41 @@
 import { useContext, useState } from "react";
-import { bookDetailsContext } from "../Root/Root";
+import { bookDetailsContext, listedBooksToWishList } from "../Root/Root";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { listedBooksId } from "../Utilities/listedBooks";
 
 const BookDetails = () => {
   const { bookDetails } = useContext(bookDetailsContext);
-  const [read, setRead] = useState(false);
+  const {setListBooks} = useContext(listedBooksToWishList); 
+//   const [read, setRead] = useState(true);
+  const [toastContainer, setToastContainer] = useState([]);
 
   const notifyMe = () => {
-    toast('Added to the Read List');
-    listedBooksId(bookId);
+        listedBooksId(bookId);
+        if(!toastContainer.includes('read')){
+            toast('Read is marked!!');
+            const readToast = [...toastContainer, 'read'];
+            setToastContainer(readToast);
+        }else{
+            toast('You have already read this content!!!')
+        }
     }   
 
-    if(read){
-        notifyMe();
-    }
-   
-
   const wishListToast = () => {
-    toast('Added to the wishtlist');
-    listedBooksId(bookId);
+    if(toastContainer.includes('read')){
+        toast('Opps!! You read it, You can not addedt it to the wish list!!!')
+    }else if(toastContainer.includes('wish')){
+        toast('This content alread added to the wish list!!')
+    }
+    else{
+        setListBooks(bookDetails);
+        const wishTost = [...toastContainer, 'wish'];
+        setToastContainer(wishTost);
+        toast('Added to the wish list')
+    }
   }
+
+
 
   const {
     bookName,
@@ -81,7 +95,7 @@ const BookDetails = () => {
         </div>
 
         <div className="flex gap-5">
-            <button onClick={() => setRead(true)} className="btn border">Read</button>
+            <button onClick={notifyMe} className="btn border">Read</button>
             <button onClick={wishListToast} className="btn bg-blue-800 text-white">Wishslist</button>
         </div>
       </div>
