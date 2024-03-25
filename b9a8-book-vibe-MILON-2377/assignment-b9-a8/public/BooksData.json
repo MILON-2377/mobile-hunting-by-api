@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "great_gatsby.jpg",
+      "review": "A timeless classic that captures the essence of the roaring twenties, filled with themes of love, wealth, and the American Dream.",
+      "totalPages": 180,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Classic", "Romance", "Drama"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 2,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "1984.jpg",
+      "review": "A dystopian masterpiece that serves as a chilling warning about the dangers of totalitarianism and surveillance.",
+      "totalPages": 328,
+      "rating": 4.7,
+      "category": "Science Fiction",
+      "tags": ["Dystopian", "Political", "Philosophical"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 3,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "to_kill_a_mockingbird.jpg",
+      "review": "A poignant exploration of racial injustice and moral growth, told through the eyes of a young girl in the American South.",
+      "totalPages": 336,
+      "rating": 4.8,
+      "category": "Fiction",
+      "tags": ["Social Justice", "Coming-of-age", "Legal Drama"],
+      "publisher": "J. B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 4,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "catcher_in_the_rye.jpg",
+      "review": "An iconic portrayal of teenage angst and rebellion, resonating with readers of all generations.",
+      "totalPages": 224,
+      "rating": 4.4,
+      "category": "Fiction",
+      "tags": ["Coming-of-age", "Alienation", "Identity"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 5,
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "pride_and_prejudice.jpg",
+      "review": "A timeless romance that delves into societal norms and the complexities of love and marriage in early 19th-century England.",
+      "totalPages": 432,
+      "rating": 4.6,
+      "category": "Classic",
+      "tags": ["Romance", "Satire", "Social Commentary"],
+      "publisher": "T. Egerton, Whitehall",
+      "yearOfPublishing": 1813
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "image": "lord_of_the_rings.jpg",
+      "review": "An epic fantasy saga filled with rich lore, memorable characters, and a timeless battle between good and evil.",
+      "totalPages": 1178,
+      "rating": 4.9,
+      "category": "Fantasy",
+      "tags": ["Epic", "Adventure", "High Fantasy"],
+      "publisher": "George Allen & Unwin",
+      "yearOfPublishing": 1954
+    }
+  ]
+  
