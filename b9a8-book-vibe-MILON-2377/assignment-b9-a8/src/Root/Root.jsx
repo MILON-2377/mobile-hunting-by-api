@@ -6,7 +6,7 @@ export const bookDetailsContext = React.createContext();
 export const listedBooksToWishList = React.createContext();
 const Root = () => {
     const [bookDetails, setBookDetails] = useState();
-    const [listBooks, setListBooks] = useState();
+    const [listBooks, setListBooks] = useState([]);
     // console.log(bookDetails)
     return (
         <div>

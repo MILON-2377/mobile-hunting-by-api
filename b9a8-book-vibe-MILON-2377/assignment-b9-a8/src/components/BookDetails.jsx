@@ -6,7 +6,7 @@ import { listedBooksId } from "../Utilities/listedBooks";
 
 const BookDetails = () => {
   const { bookDetails } = useContext(bookDetailsContext);
-  const {setListBooks} = useContext(listedBooksToWishList); 
+  const {setListBooks, listBooks} = useContext(listedBooksToWishList); 
 //   const [read, setRead] = useState(true);
   const [toastContainer, setToastContainer] = useState([]);
 
@@ -28,7 +28,9 @@ const BookDetails = () => {
         toast('This content alread added to the wish list!!')
     }
     else{
-        setListBooks(bookDetails);
+        
+        const listBook = [...listBooks, bookDetails];
+        setListBooks(listBook);
         const wishTost = [...toastContainer, 'wish'];
         setToastContainer(wishTost);
         toast('Added to the wish list')
